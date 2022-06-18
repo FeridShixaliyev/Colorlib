@@ -1,0 +1,49 @@
+﻿@using Colorlib.ViewModels.Authorizations
+@model RegisterVM
+@{
+    ViewData["Title"] = "Register";
+}
+<div class="container">
+    <div class="row" style="margin-bottom: 200px; padding-left: 400px;">
+        <form method="post">
+            <div class=" col-lg-6" style="margin-bottom:20px;margin-top:20px">
+                <h1 style="font-family: system-ui;color: black;">Register</h1>
+            </div>
+            <div class="col-lg-6">
+                <label asp-for="FirstName" class="form-label" style="font-family: system-ui; color: black;"></label>
+                <input asp-for="FirstName" class="form-control">
+                <span style="color:red" asp-validation-for="FirstName"></span>
+            </div>
+            <div class="col-lg-6">
+                <label asp-for="LastName" class="form-label" style="font-family: system-ui; color: black;"></label>
+                <input asp-for="LastName" class="form-control">
+                <span style="color:red" asp-validation-for="LastName"></span>
+            </div>
+            <div class="col-lg-6">
+                <label asp-for="Username" class="form-label" style="font-family: system-ui; color: black;"></label>
+                <input asp-for="Username" class="form-control">
+                <span style="color:red" asp-validation-for="Username"></span>
+            </div>
+            <div class="col-lg-6">
+                <label asp-for="Email" class="form-label" style="font-family: system-ui; color: black;">Email address</label>
+                <input asp-for="Email" class="form-control">
+                <span style="color:red" asp-validation-for="Email"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label" style="font-family: system-ui; color: black;">Password</label>
+                <input asp-for="Password" class="form-control">
+                <span style="color:red" asp-validation-for="Password"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ConfirmPassword" class="form-label" style="font-family: system-ui; color: black;"></label>
+                <input asp-for="ConfirmPassword" class="form-control">
+                <span style="color:red" asp-validation-for="ConfirmPassword"></span>
+            </div>
+            <div class="mb-3">
+                <a asp-action="Login" style="text-decoration: none; color: black">Have you account?</a>
+            </div>
+            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+            <button type="submit" class="btn btn-dark">Sign up</button>
+        </form>
+    </div>
+</div>

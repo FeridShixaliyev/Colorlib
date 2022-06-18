@@ -1,0 +1,33 @@
+﻿@using Colorlib.ViewModels.Authorizations
+@model LoginVM
+@{
+    ViewData["Title"] = "LogIn";
+}
+<div class="container">
+    <div class="row" style="margin-bottom: 200px; padding-left: 400px;">
+        <form method="post">
+            <div class=" col-lg-6" style="margin-bottom:20px;margin-top:20px">
+                <h1 style="font-family: system-ui; color: black;">Login</h1>
+            </div>
+            <div class="col-lg-6">
+                <label asp-for="UsernameOrEmail" class="form-label" style="font-family: system-ui;color: black">Username Or Email</label>
+                <input asp-for="UsernameOrEmail" class="form-control">
+                <span style="color:red" asp-validation-for="UsernameOrEmail"></span>
+            </div>
+            <div class="col-lg-6">
+                <label asp-for="Password" class="form-label" style="font-family: system-ui; color: black;">Password</label>
+                <input asp-for="Password" class="form-control">
+                <span style="color:red" asp-validation-for="Password"></span>
+            </div>
+            <div class="mb-3 form-check">
+                <input asp-for="RememberMe" type="checkbox" class="form-check-input">
+                <label asp-for="RememberMe" class="form-check-label" style="font-family: system-ui; color: black;">Remember me</label>
+            </div>
+            <div class="mb-3">
+                <a asp-action="Register" style="text-decoration: none; color:black">Need you account ?</a>
+            </div>
+            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+            <button type="submit" class="btn btn-dark">Sign in</button>
+        </form>
+    </div>
+</div>

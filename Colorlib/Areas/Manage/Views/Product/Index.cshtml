@@ -1,0 +1,42 @@
+﻿@model List<Product>
+@{ 
+    ViewData["Title"] = "Products";
+}
+<div class="container mt-5">
+
+    <div class="create">
+        <a class="btn btn-success mb-1" asp-controller="product" asp-action="create">Create</a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Content</th>
+                <th scope="col">Price</th>
+                <th scope="col">Edit/Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Product item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>
+                        <img style="width: 50px;height:50px; border-radius: 20%" src="~/assets/image/@item.Image" />
+                    </td>
+                    <td>@item.Name</td>
+                    <td>@item.Text</td>
+                    <td>@item.Price</td>
+                    <td>
+                        <a class="btn btn-outline-primary" asp-controller="product" asp-action="edit" asp-route-id="@item.Id" style="margin-bottom:3px">edit</a>
+                        <a class="btn btn-outline-danger" asp-controller="product" asp-action="delete" asp-route-id="@item.Id">delete</a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+</div>

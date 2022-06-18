@@ -1,0 +1,31 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-5">
+    <h3>Create Slider</h3>
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label asp-for="@Model.Name" class="form-label"></label>
+            <input asp-for="@Model.Name" class="form-control">
+            <span class="mt-2 text text-danger" asp-validation-for="@Model.Name"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="@Model.Text class="form-label"></label>
+            <input asp-for="@Model.Text" class="form-control">
+            <span class="mt-2 text text-danger" asp-validation-for="@Model.Text"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="@Model.Price" class="form-label"></label>
+            <input asp-for="@Model.Price" class="form-control">
+            <span class="mt-2 text text-danger" asp-validation-for="@Model.Price"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="@Model.ImageFile" class="form-label">Download Photo</label>
+            <input asp-for="@Model.ImageFile" accept="image/*" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+        <a asp-controller="product" asp-action="index" />
+    </form>
+</div>
